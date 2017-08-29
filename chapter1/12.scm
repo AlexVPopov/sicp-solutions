@@ -1,0 +1,8 @@
+(define (pascal row position)
+  (cond ((< row 1) 0)
+        ((< position 1) 0)
+        ((> position row) 0)
+        ((= position 1) 1)
+        ((= position row) 1)
+        (else (+ (pascal (- row 1) (- position 1))
+                 (pascal (- row 1) position)))))
